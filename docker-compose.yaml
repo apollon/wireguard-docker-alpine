@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    wireguard:
+        container_name: wireguard
+        image: wireguard:latest
+        privileged: true
+        network_mode: "host"
+        restart: unless-stopped
+        cap_add:
+            - NET_ADMIN
+        ports:
+            - 51820/udp
